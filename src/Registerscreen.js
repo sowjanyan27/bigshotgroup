@@ -76,6 +76,7 @@ class Registerscreen extends Component {
             confirmpassword: e.target.value
         });
     };
+    
 togglepasswordVisibility=(e)=>{
     this.setState((prevstate) =>({
         isShowpassword:!prevstate.isShowpassword
