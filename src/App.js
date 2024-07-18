@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
 
+import Home from './Home'
+import './App.css';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import Registerscreen from './Registerscreen';
+import ForgotPasswords from './ForgotPasswords';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-toastify/dist/ReactToastify.css';
+import Logo from './Logo';
+import Login from './Login';
+import Otpgeneration from './Otpgeneration';
+import Passwordchange from './Passwordchange';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+      <ToastContainer/>
+      <Routes>
+        <Route path='/' exact element={<Home/>}/>
+        <Route path='/Registerscreen' exact element={<Registerscreen/>}/>
+        <Route path='/ForgotPasswords' exact element={<ForgotPasswords/>}/>
+        <Route path='/Login' exact element={<Login/>}/>
+        <Route path='/Logo' exact element={<Logo/>}/>
+        <Route path='/Otpgeneration' exact element ={<Otpgeneration/>}/>
+        <Route path='/Passwordchange' exact element ={<Passwordchange/>}/>
+      
+      </Routes>
+      
+      </BrowserRouter>
+  
     </div>
   );
 }
