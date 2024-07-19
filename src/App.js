@@ -12,11 +12,14 @@ import Logo from './Logo';
 import Login from './Login';
 import Otpgeneration from './Otpgeneration';
 import Passwordchange from './Passwordchange';
+import Navbar from './Navbar';
 function App() {
   return (
     <div>
       <BrowserRouter>
+      
       <ToastContainer/>
+     
       <Routes>
         <Route path='/' exact element={<Home/>}/>
         <Route path='/Registerscreen' exact element={<Registerscreen/>}/>
@@ -25,6 +28,7 @@ function App() {
         <Route path='/Logo' exact element={<Logo/>}/>
         <Route path='/Otpgeneration' exact element ={<Otpgeneration/>}/>
         <Route path='/Passwordchange' exact element ={<Passwordchange/>}/>
+        <Route path='/Navbar' exact element={<Navbar/>}/>
       
       </Routes>
       

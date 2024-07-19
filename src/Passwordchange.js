@@ -4,6 +4,8 @@ import withRouter from './helpers/Router';
 import { toast } from 'react-toastify';
 import { Button } from 'react-bootstrap';
 import { Api } from './api/api';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 class Passwordchange extends Component {
   constructor(props) {
@@ -12,7 +14,9 @@ class Passwordchange extends Component {
     this.state = {
       password: "",
       confirmpassword: "",
-          email: ""
+          email: "",
+          ispasswordshown:"",
+          isconfirmpasswordshown:""
     };
    
   }
@@ -36,7 +40,16 @@ class Passwordchange extends Component {
       confirmpassword: e.target.value
     });
   };
-
+visibilityPassword=()=>{
+  this.setState((prevstate)=>({
+    ispasswordshown:!prevstate.ispasswordshown
+  }))   
+}
+visibilityConfirmPassword=()=>{
+  this.setState((prestate)=>({
+    isconfirmpasswordshown:!prestate.isconfirmpasswordshown
+  }))
+}
   onSubmit = async(e) => {
     e.preventDefault();
     const { password, confirmpassword,email } = this.state;
@@ -69,7 +82,8 @@ class Passwordchange extends Component {
   };
 
   render() {
-    const { password, confirmpassword } = this.state;
+    const { password, confirmpassword,ispasswordshown,
+      isconfirmpasswordshown } = this.state;
     return (
       <div>
         <div className="form-group">
@@ -77,24 +91,32 @@ class Passwordchange extends Component {
             Password: <span className="logo_color_red"> *</span>
           </label>
           <input
-            type="password"
+            type= {ispasswordshown?"text":"password"}
             id="password"
             name="password"
             placeholder="Password"
             value={password}
             onChange={this.handlePasswordChange}
           />
+          <span className="password-toggle-icon" onClick={this.visibilityPassword}>
+                        <FontAwesomeIcon icon={ispasswordshown ? faEye : faEyeSlash} />
+                    </span>
+                    </div>       
+          <div className="form-group">
           <label htmlFor="confirmpassword" className="font_family_serif">
             Confirmpassword: <span className="logo_color_red"> *</span>
           </label>
           <input
-            type="password"
+            type={isconfirmpasswordshown?"text":"password"}
             id="confirmpassword"
             name="confirmpassword"
             placeholder="Confirmpassword"
             value={confirmpassword}
             onChange={this.handleConfirmPasswordChange}
           />
+          <span className="password-toggle-icon" onClick={this.visibilityConfirmPassword}>
+                        <FontAwesomeIcon icon={isconfirmpasswordshown ? faEye : faEyeSlash} />
+                    </span>
         </div>
         <div>
         

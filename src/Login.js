@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Gents, Women } from './helpers/images';
+import Navbar from './Navbar';
 export default class Login extends Component {
   constructor(props) {
     super(props)
@@ -15,9 +16,11 @@ this.setState({
 })
   }
   render() {
-   
+    
     return (
+      
       <div>
+       <Navbar />
        <div className="form-group">
           <input
             type="text"
@@ -39,9 +42,10 @@ this.setState({
         </div>
         <div>
           <h2>{Women.title}</h2>
-          <div className='bannerBox'>
-          <img src='Assest/mens.avif' alt='banner'/>
-          </div>
+          <div className='bannerBox' style={{ margin: '10px', padding: '5px', backgroundColor: '#f0f0f0' }}>
+  <img src='Assets/mens.avif' alt='banner' />
+</div>
+
         </div>
         <div className='womenImages'>
           <img src={Women.image1} alt={Women.image1}/>
@@ -51,7 +55,7 @@ this.setState({
           <img src={Women.image6} alt={Women.image6}/>
         
         </div>
-      </div>
+        </div>
          
         </div>
       </div>
