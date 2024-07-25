@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Gents, Women } from './helpers/images';
+import { Gents, Women ,Saree} from './helpers/images';
 import Navbar from './Navbar';
-export default class Login extends Component {
+import Sidebar from './Sidebar'
+;export default class Login extends Component {
   constructor(props) {
     super(props)
   
@@ -15,50 +16,54 @@ this.setState({
   searchQuery:e.target.value
 })
   }
+  handleClick = (image) => {
+  
+    console.log(`Clicked on image with title: ${image}`);
+ 
+  }
   render() {
     
     return (
+      <div className='login-container'>
       
-      <div>
+      <div className="main-content">
        <Navbar />
-       <div className="form-group">
-          <input
-            type="text"
-            placeholder="Search..."
-            value={this.state.searchQuery}
-            onChange={this.handleSearchChange}
-          />
-          <div className='collectioncontainer'>
-        <div>
-          <h2>{Gents.title}</h2>
-        </div>
+       <Sidebar/>
+       <h2 style={{display:"center"}}>{Gents.title}</h2>
+          <div className='collection-container'>
+       
+          
+      
         <div className='mensImages'>
-          <img src={Gents.image1}alt={Gents.image1}/>
-          <img src={Gents.image2}alt={Gents.image2}/>
-          <img src={Gents.image3}alt={Gents.image3}/>
-          <img src={Gents.image4}alt={Gents.image4}/>
-          <img src={Gents.image5}alt={Gents.image5}/>
+          <img src={Gents.image1}alt={Gents.image1} onClick={() => this.handleClick(Gents.image1)}/>
+          <img src={Gents.image2}alt={Gents.image2}onClick={() => this.handleClick(Gents.image2)}/>
+          <img src={Gents.image3}alt={Gents.image3}onClick={() => this.handleClick(Gents.image3)}/>
+          <img src={Gents.image4}alt={Gents.image4}onClick={() => this.handleClick(Gents.image1)}/>
+          <img src={Gents.image5}alt={Gents.image5}onClick={() => this.handleClick(Gents.image1)}/>
         
         </div>
         <div>
-          <h2>{Women.title}</h2>
+          
           <div className='bannerBox' style={{ margin: '10px', padding: '5px', backgroundColor: '#f0f0f0' }}>
-  <img src='Assets/mens.avif' alt='banner' />
+  <img src='Assest/mens.avif' alt='banner' />
 </div>
 
         </div>
+        <h2>{Women.title}</h2>
         <div className='womenImages'>
-          <img src={Women.image1} alt={Women.image1}/>
-          <img src={Women.image2} alt={Women.image2}/>
-          <img src={Women.image3} alt={Women.image3}/>
-          <img src={Women.image5} alt={Women.image5}/>
-          <img src={Women.image6} alt={Women.image6}/>
+          <img src={Women.image1} alt={Women.image1}onClick={() => this.handleClick(Women.title)}/>
+          <img src={Women.image2} alt={Women.image2}onClick={() => this.handleClick(Women.title)}/>
+          <img src={Women.image3} alt={Women.image3}onClick={() => this.handleClick(Women.title)}/>
+          <img src={Women.image5} alt={Women.image5}onClick={() => this.handleClick(Women.title)}/>
+          <img src={Women.image6} alt={Women.image6}onClick={() => this.handleClick(Women.title)}/>
         
         </div>
         </div>
          
         </div>
       </div>
+      
+    
     )
   }
 }

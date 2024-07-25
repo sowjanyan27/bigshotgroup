@@ -4,7 +4,7 @@ export default class Navbar extends Component {
     render() {
         return (
             <div>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
                     <div className="container-fluid">
                         <a className="navbar-brand" href="#">Bigshot</a>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,7 +16,7 @@ export default class Navbar extends Component {
                                     <a className="nav-link active" aria-current="page" href="#">Home</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Men</a>
+                                    <a className="nav-link" href="/images">Men</a>
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link" href="#">Women</a>

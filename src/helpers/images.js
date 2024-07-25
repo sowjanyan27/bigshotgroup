@@ -5,11 +5,18 @@ export const Gents={
     image3:'Assest/men/men 3.png',
     image4:'Assest/men/men 4.png',
     image5:'Assest/men/men 5.png',
+    prices: ['559 INR', '659 INR', '760 INR', '859 INR', '959 INR'],
+    colours: ['blue', 'gray', 'black', 'lightblue', 'white'],
     price1:'559 INR',
     price2:'659 INR',
     price3:'760 INR',
     price4:'859 INR',
-    price5:'959 INR'
+    price5:'959 INR',
+    colour:'blue',
+    colour:'gray',
+    colour:'black',
+    colour:'lightblue',
+    colour:'white'
    
 
 }
@@ -24,7 +31,26 @@ export const Women={
     price2:'659 INR',
     price3:'760 INR',
     price4:'859 INR',
-    price5:'959 INR'
+    price5:'959 INR',
+    colour:'pink',
+    colour:'black',
+    colour:'green',
+    colour:'peech',
+    colour:'navyblue',
+    prices: ['559 INR', '659 INR', '760 INR', '859 INR', '959 INR'],
+  colours: ['pink', 'black', 'green', 'peech', 'navyblue']
+    
    
+
+}
+export const Saree={
+  title:'Saress',
+  image1:'Assest/women/saree1.jpg',
+  image2:'Assest/women/Saree2.jpg',
+  image3:'Assest/women/saress3.jpg',
+  image4:'Assest/women/saree4.png',
+  image3:'Assest/women/sarees.png',
+  image3:'Assest/women/sarees silk6.webp',
+
 
 }

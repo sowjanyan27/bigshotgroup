@@ -13,6 +13,7 @@ import Login from './Login';
 import Otpgeneration from './Otpgeneration';
 import Passwordchange from './Passwordchange';
 import Navbar from './Navbar';
+import Sidebar from './Sidebar';
 function App() {
   return (
     <div>
@@ -29,6 +30,7 @@ function App() {
         <Route path='/Otpgeneration' exact element ={<Otpgeneration/>}/>
         <Route path='/Passwordchange' exact element ={<Passwordchange/>}/>
         <Route path='/Navbar' exact element={<Navbar/>}/>
+        <Route path='/Sidebar' exact element={<Sidebar/>}/>
       
       </Routes>
       
