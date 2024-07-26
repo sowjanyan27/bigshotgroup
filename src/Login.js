@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Gents, Women ,Saree} from './helpers/images';
+import { Gents, Womens ,Saree} from './helpers/images';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar'
   ;export default class Login extends Component {
@@ -25,10 +25,10 @@ import Sidebar from './Sidebar'
 
     return (
       <div className='login-container'>
-        
-        <div className="main-content">
-          <Navbar />
-          <Sidebar/>
+      
+      <div className="main-content">
+       <Navbar />
+       {/* <Sidebar/> */}
        <h2 style={{display:"center"}}>{Gents.title}</h2>
           <div className='collection-container'>
 
@@ -63,19 +63,28 @@ import Sidebar from './Sidebar'
               </div>
 
             </div>
-            <h2>{Women.title}</h2>
+            <h2>{Womens.title}</h2>
             <div className='womenImages'>
-              <img src={Women.image1} alt={Women.image1} onClick={() => this.handleClick(Women.title)} />
-              <img src={Women.image2} alt={Women.image2} onClick={() => this.handleClick(Women.title)} />
-              <img src={Women.image3} alt={Women.image3} onClick={() => this.handleClick(Women.title)} />
-              <img src={Women.image5} alt={Women.image5} onClick={() => this.handleClick(Women.title)} />
-              <img src={Women.image6} alt={Women.image6} onClick={() => this.handleClick(Women.title)} />
+              <img src={Womens.image1} alt={Womens.image1} onClick={() => this.handleClick(Womens.title)} />
+              <img src={Womens.image2} alt={Womens.image2} onClick={() => this.handleClick(Womens.title)} />
+              <img src={Womens.image3} alt={Womens.image3} onClick={() => this.handleClick(Womens.title)} />
+              <img src={Womens.image5} alt={Womens.image5} onClick={() => this.handleClick(Womens.title)} />
+              <img src={Womens.image6} alt={Womens.image6} onClick={() => this.handleClick(Womens.title)} />
 
             </div>
           </div>
 
         </div>
-      </div>
+        <h2>{Womens.title}</h2>
+        <div className='womenImages'>
+          <img src={Womens.image} alt={Womens.image}onClick={() => this.handleClick(Womens.title)}/>
+          {/* <img src={Womens.image2} alt={Womens.image2}onClick={() => this.handleClick(Womens.title)}/>
+          <img src={Womens.image3} alt={Womens.image3}onClick={() => this.handleClick(Womens.title)}/>
+          <img src={Womens.image5} alt={Womens.image5}onClick={() => this.handleClick(Womens.title)}/>
+          <img src={Womens.image6} alt={Womens.image6}onClick={() => this.handleClick(Womens.title)}/>
+         */}
+        </div>
+        </div>
 
 
     )
