@@ -16,7 +16,23 @@ export const Gents={
     colour:'gray',
     colour:'black',
     colour:'lightblue',
-    colour:'white'
+    colour:'white',
+    banner1:'Assest/men/shoping_banner.png',
+    banner2:'Assest/men/shoping_banner1.png',
+    banner3:'Assest/men/shoping_banner3.png',
+    kurta:'Assest/men/j1.png',
+    kurta2:'Assest/men/j2.png',
+    kurta3:'Assest/men/j3.png',
+    c1:'Assest/men/c1.png',
+    c2:'Assest/men/c2.png',
+    c3:'Assest/men/c3.png',
+    c4:'Assest/men/c4.png',
+    c5:'Assest/men/c5.png',
+
+    // kurta5:'Assest/men/jodhpuris.png',
+    app_store:'Assest/men/istore.png',
+
+
    
 
 }
