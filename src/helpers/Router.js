@@ -9,7 +9,7 @@ import {
       let location = useLocation();
       let navigate = useNavigate();
       let params = useParams();
-      console.log('test')
+     
       return (
         <Component
           {...props}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Gents, Womens ,Saree} from './helpers/images';
+import { Gents, Kurta ,Saree} from './helpers/images';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar'
 ;export default class Login extends Component {
@@ -49,9 +49,9 @@ this.setState({
 </div>
 
         </div>
-        <h2>{Womens.title}</h2>
+        <h2>{Kurta.title}</h2>
         <div className='womenImages'>
-          <img src={Womens.image} alt={Womens.image}onClick={() => this.handleClick(Womens.title)}/>
+          <img src={Kurta.image} alt={Kurta.image}onClick={() => this.handleClick(Kurta.title)}/>
           {/* <img src={Womens.image2} alt={Women.image2}onClick={() => this.handleClick(Women.title)}/>
           <img src={Womens.image3} alt={Women.image3}onClick={() => this.handleClick(Women.title)}/>
           <img src={Womens.image5} alt={Women.image5}onClick={() => this.handleClick(Women.title)}/>

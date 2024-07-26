@@ -242,3 +242,19 @@ button:hover {
   font-size: 16px;
   color: #333;
 }
+.navbar a:hover {
+  color: #007bff; /* Change color on hover */
+  background-color: #f0f0f0; /* Light background on hover */
+  border-radius: 4px; /* Rounded corners on hover */
+}
+
+/* Active link style */
+.navbar a.active {
+  font-weight: bold; /* Bold text for active link */
+  color: #007bff; /* Primary color for active link */
+  border-bottom: 2px solid #007bff; /* Underline effect */
+  /* padding-bottom: 8px;  */
+  /* Adjust padding to accommodate border */
+  background-color: #e9ecef; /* Subtle background color for active link */
+  border-radius: 2px; /* Rounded corners for a softer look */
+}
