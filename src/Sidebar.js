@@ -16,7 +16,7 @@ const Sidebar = () => {
             <li><a class="dropdown-item" href="#">Kurti</a></li>
             <li><a class="dropdown-item" href="#">Jeggings</a></li>
          
-            <li><a class="dropdown-item" href="#">Sarees</a></li>
+            <li><a class="dropdown-item" href="/Women">Sarees</a></li>
           </ul>
         </li>
                 <li>About</li>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Gents, Women ,Saree} from './helpers/images';
+import { Gents, Womens ,Saree} from './helpers/images';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar'
 ;export default class Login extends Component {
@@ -28,7 +28,7 @@ this.setState({
       
       <div className="main-content">
        <Navbar />
-       <Sidebar/>
+       {/* <Sidebar/> */}
        <h2 style={{display:"center"}}>{Gents.title}</h2>
           <div className='collection-container'>
        
@@ -49,14 +49,14 @@ this.setState({
 </div>
 
         </div>
-        <h2>{Women.title}</h2>
+        <h2>{Womens.title}</h2>
         <div className='womenImages'>
-          <img src={Women.image1} alt={Women.image1}onClick={() => this.handleClick(Women.title)}/>
-          <img src={Women.image2} alt={Women.image2}onClick={() => this.handleClick(Women.title)}/>
-          <img src={Women.image3} alt={Women.image3}onClick={() => this.handleClick(Women.title)}/>
-          <img src={Women.image5} alt={Women.image5}onClick={() => this.handleClick(Women.title)}/>
-          <img src={Women.image6} alt={Women.image6}onClick={() => this.handleClick(Women.title)}/>
-        
+          <img src={Womens.image} alt={Womens.image}onClick={() => this.handleClick(Womens.title)}/>
+          {/* <img src={Womens.image2} alt={Women.image2}onClick={() => this.handleClick(Women.title)}/>
+          <img src={Womens.image3} alt={Women.image3}onClick={() => this.handleClick(Women.title)}/>
+          <img src={Womens.image5} alt={Women.image5}onClick={() => this.handleClick(Women.title)}/>
+          <img src={Womens.image6} alt={Women.image6}onClick={() => this.handleClick(Women.title)}/>
+         */}
         </div>
         </div>
          
