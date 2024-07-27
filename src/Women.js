@@ -101,44 +101,50 @@ class Women extends Component {
 
         return (
             <div>
-                {!isshown && (
-                    <div>
-                        <div className="women-container">
-                            <h2>{this.props.router.params.category}</h2>
-                            <div className="women-gallery">
-                                {items && items.length > 0 ? (
-                                    items.map((item) => (
-                                        <div key={item.id} className="women-item">
-                                            <img 
-                                                src={item.image}
-                                                alt={`Item ${item.id}`}
-                                                onClick={() => this.handleClick(item)}
-                                            />
-                                            <div>
-                                                <Button onClick={() => this.decrement(item)}>-</Button>
-                                                <span>{cart.find(cartItem => cartItem.id === item.id)?.count || 0}</span>
-                                                <Button onClick={() => this.handleAddToCart(item)}>Add to Cart</Button>
-                                            </div>
-                                        </div>
-                                    ))
-                                ) : (
-                                    <p>No items available</p>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                )}
 
-                {isshown && (
-                    <div className="item-details">
-                        <img src={selectedItem.image} alt={`Selected ${selectedItem.id}`} />
-                        <p>Description: {selectedItem.description}</p>
-                        <p>Color: {selectedItem.color}</p>
-                        {selectedItem.size && <p>Size: {selectedItem.size}</p>}
-                        <button onClick={this.handleCloseDetails}>Close</button>
+                <div>
+                    <div className="women-container">
+                        <h2>{this.props.router.params.category}</h2>
+                        {/* <img
+                            src='/Assest/kurta.png'
+                            alt=''
+                        /> */}
+                
+                        <div className="women-gallery">
+                        {items && items.length > 0 ? (
+                            items.map((item) => (
+                                <div key={item.id} className="women-item">
+                                    <img 
+                                        src={item.image}
+                                        alt={`Item ${item.id}`}
+                                        onClick={() => this.handleClick(item)}
+                                    />
+                                    <div>
+                                        <Button onClick={() => this.decrement(item)}>-</Button>
+                                        <span>{cart.find(cartItem => cartItem.id === item.id)?.count || 0}</span>
+                                        <Button onClick={() => this.handleAddToCart(item)}>Add to Cart</Button>
+                                    </div>
+                                </div>
+                            ))
+                        ) : (
+                            <p>No items available</p>
+                        )}
                     </div>
-                )}
+                    </div>
+                </div>
+
+
+                {/* {isshown && (
+            <div className="item-details">
+                <img src={selectedItem.image} alt={`Selected ${selectedItem.id}`} />
+                <p>Description: {selectedItem.description}</p>
+                <p>Color: {selectedItem.color}</p>
+                {selectedItem.size && <p>Size: {selectedItem.size}</p>}
+                <button onClick={this.handleCloseDetails}>Close</button>
             </div>
+        )} */}
+            </div>
+
         );
     }
 }

@@ -15,7 +15,7 @@ export const Kurta = {
   items: [
     {
       id: 1,
-      image: 'Assest/cart.png',
+      image: '/Assest/women/women1.png',
       price: '559 INR',
       color: 'pink',
       description: 'Description for item 1',
@@ -23,7 +23,7 @@ export const Kurta = {
     },
     {
       id: 2,
-      image: 'Assest/women/women 2.jpg',
+      image: '/Assest/women/women2.jpg',
       price: '659 INR',
       color: 'black',
       description: 'Description for item 2',
@@ -31,7 +31,7 @@ export const Kurta = {
     },
     {
       id: 3,
-      image: 'Assest/women/women 3.jpg',
+      image: '/Assest/women/women3.jpg',
       price: '760 INR',
       color: 'green',
       description: 'Description for item 3',
@@ -39,7 +39,7 @@ export const Kurta = {
     },
     {
       id: 4,
-      image: 'Assest/women/women 5.png',
+      image: '/Assest/women/women5.png',
       price: '859 INR',
       color: 'peech',
       description: 'Description for item 4',
@@ -47,7 +47,7 @@ export const Kurta = {
     },
     {
       id: 5,
-      image: 'Assest/women/women 6.jpg',
+      image: '/Assest/women/women6.jpg',
       price: '959 INR',
       color: 'navyblue',
       description: 'Description for item 5',
@@ -55,7 +55,7 @@ export const Kurta = {
     },
     {
       id: 6,
-      image: 'Assest/women/ajio.avif',
+      image: '/Assest/women/ajio.avif',
       price: '1499 INR',
       color: 'Pink Slad',
       description: 'Cotton silk materials with white emibrodary'
@@ -63,7 +63,7 @@ export const Kurta = {
     },
     {
       id: 7,
-      image: 'Assest/women/kurta2.webp',
+      image: '/Assest/women/kurta2.webp',
       price: '1299 INR',
       color: 'Blue and White',
       description: 'Cotton  materials '
@@ -71,7 +71,7 @@ export const Kurta = {
     },
     {
       id: 8,
-      image: 'Assest/women/kurta3.webp',
+      image: '/Assest/women/kurta3.webp',
       price: '1099 INR',
       color: 'Brown',
       description: 'Cotton  materials '
@@ -79,7 +79,7 @@ export const Kurta = {
     },
     {
       id: 9,
-      image: 'Assest/women/kurta4.webp',
+      image: '/Assest/women/kurta4.webp',
       price: '1099 INR',
       color: 'Dark Green',
       description: 'Cotton  materials '
@@ -114,7 +114,7 @@ export const Saree = {
     },
     {
       id: 4,
-      image: 'Assest/women/Saree4.png',
+      image: 'Assest/women/saree4.png',
       price: '1099 INR',
       color: 'Yellow',
       description: 'Description for Saree 4'
@@ -149,7 +149,7 @@ export const Lehengacholi = {
     },
     {
       id: 2,
-      image: 'Assest/women/lehenga choli9.webp',
+      image: 'Assest/women/lehengacholi9.webp',
       price: '1299 INR',
       color: 'navy Blue',
       description: 'Cotton  materials '
@@ -157,7 +157,7 @@ export const Lehengacholi = {
     },
     {
       id: 3,
-      image: 'Assest/women/lehenga choli10.webp',
+      image: 'Assest/women/lehengacholi10.webp',
       price: '1099 INR',
       color: 'purple',
       description: 'Cotton  materials '
@@ -165,7 +165,7 @@ export const Lehengacholi = {
     },
     {
       id: 4,
-      image: 'Assest/women/lehenga choli11.webp',
+      image: 'Assest/women/lehengacholi11.webp',
       price: '3099 INR',
       color: 'cement ',
       description: 'Cotton  materials '
@@ -173,7 +173,7 @@ export const Lehengacholi = {
     },
     {
       id: 5,
-      image: 'Assest/women/lehenga choli14.webp',
+      image: 'Assest/women/lehengacholi14.webp',
       price: '4099 INR',
       color: 'red ',
       description: 'Cotton  materials '
@@ -181,7 +181,7 @@ export const Lehengacholi = {
     },
     {
       id: 6,
-      image: 'Assest/women/lehenga choli15.webp',
+      image: 'Assest/women/lehengacholi15.webp',
       price: '4099 INR',
       color: 'dark green',
       description: 'Cotton  materials '
@@ -189,7 +189,7 @@ export const Lehengacholi = {
     },
     {
       id: 7,
-      image: 'Assest/women/lehenga choli16.webp',
+      image: 'Assest/women/lehengacholi16.webp',
       price: '4099 INR',
       color: 'blue',
       description: 'Cotton  materials '
@@ -197,7 +197,7 @@ export const Lehengacholi = {
     },
     {
       id: 8,
-      image: 'Assest/women/lehenga choli17.webp',
+      image: 'Assest/women/lehengacholi17.webp',
       price: '4099 INR',
       color: 'peech',
       description: ' falling materials '
@@ -205,7 +205,7 @@ export const Lehengacholi = {
     },
     {
       id: 9,
-      image: 'Assest/women/lehenga choli18.webp',
+      image: 'Assest/women/lehengacholi18.webp',
       price: '4099 INR',
       color: 'Black',
       description: ' falling materials '
@@ -213,7 +213,7 @@ export const Lehengacholi = {
     },
     {
       id: 10,
-      image: 'Assest/women/lehenga choli19.webp',
+      image: 'Assest/women/lehengacholi19.webp',
       price: '4099 INR',
       color: 'Green and red',
       description: ' cotton materials '
@@ -221,7 +221,7 @@ export const Lehengacholi = {
     },
     {
       id: 11,
-      image: 'Assest/women/lehenga choliblack.webp',
+      image: 'Assest/women/lehengacholiblack.webp',
       price: '4099 INR',
       color: 'black',
       description: ' cotton materials '
@@ -229,7 +229,7 @@ export const Lehengacholi = {
     },
     {
       id: 12,
-      image: 'Assest/women/lehenga-choli.webp',
+      image: 'Assest/women/lehengacholi.webp',
       price: '4099 INR',
       color: 'black',
       description: ' cotton materials '
@@ -244,7 +244,7 @@ export const dressmaterials = {
   items: [
     {
       id: 1,
-      image: 'Assest/women/Dress material.webp',
+      image: 'Assest/women/dressmaterial.webp',
       price: '1099 INR',
       color: 'rani pink',
       description: 'Cotton  materials '
@@ -252,7 +252,7 @@ export const dressmaterials = {
     },
     {
       id: 2,
-      image: 'Assest/women/dress material1.webp',
+      image: 'Assest/women/dressmaterial1.webp',
       price: '1099 INR',
       color: 'light jamun',
       description: 'silk materials '
@@ -260,7 +260,7 @@ export const dressmaterials = {
     },
     {
       id: 3,
-      image: 'Assest/women/dress material6.webp',
+      image: 'Assest/women/dressmaterial6.webp',
       price: '1099 INR',
       color: 'Baby pink',
       description: 'silk materials '
@@ -268,7 +268,7 @@ export const dressmaterials = {
     },
     {
       id: 4,
-      image: 'Assest/women/dress material2.webp',
+      image: 'Assest/women/dressmaterial2.webp',
       price: '1099 INR',
       color: 'Brown',
       description: 'silk materials '
@@ -276,7 +276,7 @@ export const dressmaterials = {
     },
     {
       id: 5,
-      image: 'Assest/women/dress material3.webp',
+      image: 'Assest/women/dressmaterial3.webp',
       price: '1099 INR',
       color: 'lightish brown',
       description: 'silk materials '
@@ -284,7 +284,7 @@ export const dressmaterials = {
     },
     {
       id: 5,
-      image: 'Assest/women/dress material5.webp',
+      image: 'Assest/women/dressmaterial5.webp',
       price: '1099 INR',
       color: 'lightish green',
       description: 'silk materials '
@@ -292,7 +292,7 @@ export const dressmaterials = {
     },
     {
       id: 6,
-      image: 'Assest/women/dress material6.webp',
+      image: 'Assest/women/dressmaterial6.webp',
       price: '1099 INR',
       color: 'lightish green and pink',
       description: 'silk materials '
@@ -300,7 +300,7 @@ export const dressmaterials = {
     },
     {
       id: 7,
-      image: 'Assest/women/dress material7.webp',
+      image: 'Assest/women/dressmaterial7.webp',
       price: '1099 INR',
       color: 'pastel color  blue',
       description: 'silk materials '
@@ -308,7 +308,7 @@ export const dressmaterials = {
     },
     {
       id: 8,
-      image: 'Assest/women/dress material8.webp',
+      image: 'Assest/women/dressmaterial8.webp',
       price: '1099 INR',
       color: 'red and yellow',
       description: 'cotton materials '
@@ -316,7 +316,7 @@ export const dressmaterials = {
     },
     {
       id: 9,
-      image: 'Assest/women/dress material9.webp',
+      image: 'Assest/women/dressmaterial9.webp',
       price: '1099 INR',
       color: 'nice pastel color blue',
       description: 'silk materail'
