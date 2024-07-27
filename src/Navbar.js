@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
-
-export default class Navbar extends Component {
+import { NavLink } from 'react-router-dom';
+import withRouter from './helpers/Router';
+ class Navbar extends Component {
+    handleCategoryChange = (category) => {
+        const { onCategoryChange } = this.props;
+        const {router}=this.props;
+        router.navigate(`/women/${category}`)
+        if (onCategoryChange) {
+            onCategoryChange(category);
+        }
+    }
 
 
     render() {
+        const { cartCount } = this.props;
         return (
             <div>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+                <nav className="navbar navbar-expand-lg navbar-light bg-light navbar a.active fixed-top">
                     <div className="container-fluid">
                         <a className="navbar-brand"style={{color:"blue"}} href="#">Bigshot</a>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,18 +27,29 @@ export default class Navbar extends Component {
                                 <li className="nav-item">
                                     <a className="nav-link active" aria-current="page" href="/Login">Home</a>
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="/images">Men</a>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Men
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="/Men">Shirts</a></li>
+                                        <li><a class="dropdown-item" href='/Men'>Pants</a></li>
+                                        <li><a class="dropdown-item" href="/Men">Winterwear & Hoodles</a></li>
+                                        <li><a class="dropdown-item" href="/Men">Jeans</a></li>
+                                        <li><a class="dropdown-item" href="/Men">T-shits</a></li>
+                                    </ul>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Women
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="/Women">Kurti</a></li>
-                                        <li><a class="dropdown-item" href='/Women'>Jeggings</a></li>
-
-                                        <li><a class="dropdown-item" href="/Women">Sarees</a></li>
+                                    <li><NavLink className="dropdown-item" to="/women/Kurta" onClick={() => this.handleCategoryChange('Kurta')}>Kurta</NavLink></li>
+                                        <li><NavLink className="dropdown-item" to="/women/Leggings" onClick={() => this.handleCategoryChange('Leggings')}>Leggings</NavLink></li>
+                                        <li><NavLink className="dropdown-item" to="/women/Dressmaterial" onClick={() => this.handleCategoryChange('DressMaterial')}>Dress Material</NavLink></li>
+                                        <li><NavLink className="dropdown-item" to="/women/Sarees" onClick={() => this.handleCategoryChange('Sarees')}>Sarees</NavLink></li>
+                                        <li><NavLink className="dropdown-item" to="/women/Lehengacholi" onClick={() => this.handleCategoryChange('Lehengacholi')}>Lehengacholi</NavLink></li>
+                                
                                     </ul>
                                 </li>
                                 <li className="nav-item">
@@ -59,3 +80,4 @@ export default class Navbar extends Component {
         );
     }
 }
+export default withRouter(Navbar)
