@@ -1,69 +1,109 @@
-import React, { Component } from 'react'
-import { Gents, Kurta ,Saree} from './helpers/images';
+import React, { Component } from 'react';
+import { Gents, Kurta } from './helpers/images'; // Ensure images have correct exports
 import Navbar from './Navbar';
-import Sidebar from './Sidebar'
-;export default class Login extends Component {
-  constructor(props) {
-    super(props)
-  
-    this.state = {
-      searchQuery:""
-    }
-  }
- 
-  handleSearchChange=(e)=>{
-this.setState({
-  searchQuery:e.target.value
-})
-  }
-  handleClick = (image) => {
-  
-    console.log(`Clicked on image with title: ${image}`);
- 
-  }
-  render() {
-    
-    return (
-      <div className='login-container'>
-      
-      <div className="main-content">
-       <Navbar />
-       {/* <Sidebar/> */}
-       <h2 style={{display:"center"}}>{Gents.title}</h2>
-          <div className='collection-container'>
-       
-          
-      
-        <div className='mensImages'>
-          <img src={Gents.image1}alt={Gents.image1} onClick={() => this.handleClick(Gents.image1)}/>
-          <img src={Gents.image2}alt={Gents.image2}onClick={() => this.handleClick(Gents.image2)}/>
-          <img src={Gents.image3}alt={Gents.image3}onClick={() => this.handleClick(Gents.image3)}/>
-          <img src={Gents.image4}alt={Gents.image4}onClick={() => this.handleClick(Gents.image1)}/>
-          <img src={Gents.image5}alt={Gents.image5}onClick={() => this.handleClick(Gents.image1)}/>
-        
-        </div>
-        <div>
-          
-          <div className='bannerBox' style={{ margin: '10px', padding: '5px', backgroundColor: '#f0f0f0' }}>
-  <img src='Assest/mens.avif' alt='banner' />
-</div>
+import Sidebar from './Sidebar'; // Commented out in your code
+import { Button } from 'react-bootstrap';
 
-        </div>
-        <h2>{Kurta.title}</h2>
-        <div className='womenImages'>
-          <img src={Kurta.image} alt={Kurta.image}onClick={() => this.handleClick(Kurta.title)}/>
-          {/* <img src={Womens.image2} alt={Women.image2}onClick={() => this.handleClick(Women.title)}/>
-          <img src={Womens.image3} alt={Women.image3}onClick={() => this.handleClick(Women.title)}/>
-          <img src={Womens.image5} alt={Women.image5}onClick={() => this.handleClick(Women.title)}/>
-          <img src={Womens.image6} alt={Women.image6}onClick={() => this.handleClick(Women.title)}/>
-         */}
-        </div>
-        </div>
-         
+
+export default class Login extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      searchQuery: "",
+    };
+  }
+
+  handleSearchChange = (e) => {
+    this.setState({
+      searchQuery: e.target.value,
+    });
+  };
+
+  handleClick = (title) => {
+    console.log(`Clicked on image with title: ${title}`);
+  };
+
+  scroll = (direction) => {
+    const container = document.querySelector('.collection-container');
+    if (!container) {
+      console.error('Collection container not found');
+      return;
+    }
+
+    const scrollAmount = direction === 'prev' ? -300 : 300; // Adjust this value as needed
+    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  };
+
+  render() {
+    return (
+      <div className="login-container">
+        <div className="main-content">
+          <Navbar />
+          {/* <Sidebar /> Uncomment if you want to use Sidebar */}
+
+
+
+          <h2 style={{ textAlign: "center" }}>{Gents.title}</h2>
+          <div className="collection-container">
+
+
+            <img
+              src='/Assest/images/prev.png'
+              alt="prev"
+              style={{ cursor: 'pointer',maxWidth: '100%' }}
+              onClick={() => this.scroll('prev')}
+            />
+
+            <div className="mensImages">
+              {Gents.map((item) => (
+                <div key={item.id} className="gents-item">
+                  <img
+                    src={item.image}
+                    alt={`Gent ${item.id}`}
+                    onClick={() => this.handleClick(item.title)}
+                  />
+                </div>
+              ))}
+            </div>
+            <img src='/Assest/images/next.png'
+             style={{ cursor: 'pointer',maxWidth: '100%' }}
+              alt="next"
+              onClick={() => this.scroll('next')}
+            />
+            {/* <div>
+              <div className='bannerBox' style={{ margin: '10px', padding: '5px', backgroundColor: '#f0f0f0' }}>
+                <img src='Assest/mens.avif' alt='banner' />
+              </div>
+            </div> */}
+            <div>
+
+            <h2>{Kurta.title}</h2>
+            <img
+              src='/Assest/images/prev.png'
+              alt="prev"
+              style={{ cursor: 'pointer',maxWidth: '100%' }}
+              onClick={() => this.scroll('prev')}
+            />
+            <div className="womenImages">
+              {Kurta.items.map((item) => (
+                <img
+                  key={item.id}
+                  src={item.image}
+                  alt={item.title}
+                  onClick={() => this.handleClick(item.title)}
+                />
+              ))}
+            </div>
+            <img src='/Assest/images/next.png'
+              alt="next"
+              style={{ cursor: 'pointer',maxWidth: '100%' }}
+              onClick={() => this.scroll('next')}
+            />
+          </div>
+          </div>
         </div>
       </div>
-      
-    
-    )
+    );
   }
 }

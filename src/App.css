@@ -115,6 +115,7 @@ button:hover {
   flex-wrap: wrap;
   gap: 10px;
   margin-left:10%;
+ 
 }
 
 .mensImages img, .womenImages img {
@@ -145,6 +146,9 @@ button:hover {
   text-align: center; /* Center text horizontally */
   font-size: 18px; /* Adjust font size */
   border: 1px solid #ccc; /* Optional: Add border for visual separation */
+}
+.gents-item{
+  display: inline-block;
 }
 
 
@@ -194,6 +198,14 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   margin-top: 5%;
+  overflow-x: auto; 
+  align-items: center;
+  white-space: nowrap; 
+  scroll-behavior: smooth;
+
+  
+
+  
 }
 
 
