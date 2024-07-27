@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, } from 'react-router-dom';
 import Navbar from './Navbar';
 import Home from './Home';
 import Registerscreen from './Registerscreen';
@@ -11,7 +11,7 @@ import Otpgeneration from './Otpgeneration';
 import Passwordchange from './Passwordchange';
 import Sidebar from './Sidebar';
 import Women from './Women';
-import WomenWithParams from './Women';
+
 
 export default class App extends Component {
     constructor(props) {
@@ -22,7 +22,17 @@ export default class App extends Component {
             isLoggedIn: false,
         };
     }
-
+//  Layout = ({ children }) => {
+//         const location = useLocation();
+//         const hideNavbarRoutes = ['/', '/Home'];
+      
+//         return (
+//           <>
+//             {!hideNavbarRoutes.includes(location.pathname) && <Navbar />}
+//             {children}
+//           </>
+//         );
+//       };
     handleAddToCart = (item) => {
         const { cart } = this.state;
         const existingIndex = cart.findIndex(cartItem => cartItem.id === item.id);
@@ -58,7 +68,7 @@ export default class App extends Component {
 
         return (
             <BrowserRouter>
-                {isLoggedIn && <Navbar cartCount={cart.length} onCategoryChange={this.handleCategoryChange()} />}
+               <Navbar cartCount={cart.length} onCategoryChange={this.handleCategoryChange()} />
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/Registerscreen' element={<Registerscreen />} />
