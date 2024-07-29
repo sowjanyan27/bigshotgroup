@@ -105,11 +105,7 @@ class Women extends Component {
                 <div>
                     <div className="women-container">
                         <h2>{this.props.router.params.category}</h2>
-                        {/* <img
-                            src='/Assest/kurta.png'
-                            alt=''
-                        /> */}
-                
+                     {!isshown && (
                         <div className="women-gallery">
                         {items && items.length > 0 ? (
                             items.map((item) => (
@@ -130,11 +126,12 @@ class Women extends Component {
                             <p>No items available</p>
                         )}
                     </div>
+   ) }
                     </div>
                 </div>
 
 
-                {/* {isshown && (
+                {isshown && (
             <div className="item-details">
                 <img src={selectedItem.image} alt={`Selected ${selectedItem.id}`} />
                 <p>Description: {selectedItem.description}</p>
@@ -142,7 +139,7 @@ class Women extends Component {
                 {selectedItem.size && <p>Size: {selectedItem.size}</p>}
                 <button onClick={this.handleCloseDetails}>Close</button>
             </div>
-        )} */}
+        )}
             </div>
 
         );

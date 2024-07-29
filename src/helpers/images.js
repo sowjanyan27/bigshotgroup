@@ -6,7 +6,9 @@
 //   image4: 'Assest/men/men 4.png',
 //   image5: 'Assest/men/men 5.png',
 // }
-export const Gents=[{
+export const Gents=[
+
+  {
   
     
     id: 1,
