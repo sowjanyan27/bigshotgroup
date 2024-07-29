@@ -110,17 +110,12 @@ button:hover {
 .bannerBox{
   margin:10px 0px
 }
-.mensImages, .womenImages {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-left:10%;
- 
-}
+
 
 .mensImages img, .womenImages img {
-  width: 200px;
-  height: 150px; 
+  max-width: 100%;
+  display: block;
+  
   
 }
 .bannerBox img{
@@ -145,7 +140,8 @@ button:hover {
   margin: 0 5px; /* Adjust margin between inputs */
   text-align: center; /* Center text horizontally */
   font-size: 18px; /* Adjust font size */
-  border: 1px solid #ccc; /* Optional: Add border for visual separation */
+  border: 1px solid #ccc; 
+  /* Optional: Add border for visual separation */
 }
 .gents-item{
   display: inline-block;
@@ -184,6 +180,7 @@ button:hover {
   flex-direction: column;
   height: 100vh; 
   padding-top: 20px; 
+  /* margin-top: 30px; */
 }
 
 .main-content {
@@ -191,25 +188,6 @@ button:hover {
   padding: 20px;
   overflow-y: auto; 
 }
-
-
-
-.collection-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 5%;
-  overflow-x: auto; 
-  align-items: center;
-  white-space: nowrap; 
-  scroll-behavior: smooth;
-
-  
-
-  
-}
-
-
-
 
 
 /* Navbar */
@@ -254,19 +232,40 @@ button:hover {
   font-size: 16px;
   color: #333;
 }
-.navbar a:hover {
-  color: #007bff; /* Change color on hover */
-  background-color: #f0f0f0; /* Light background on hover */
-  border-radius: 4px; /* Rounded corners on hover */
+.navbar-nav {
+  font-weight: bold;
+  color: #165aa2;
+  border-radius: 2px;
+}
+.collection-container {
+  display: flex;
+ overflow: hidden; 
+  width: 100%; 
+  scroll-snap-type: x mandatory;
+  align-items: center;
 }
 
-/* Active link style */
-.navbar a.active {
-  font-weight: bold; /* Bold text for active link */
-  color: #007bff; /* Primary color for active link */
-  border-bottom: 2px solid #007bff; /* Underline effect */
-  /* padding-bottom: 8px;  */
-  /* Adjust padding to accommodate border */
-  background-color: #e9ecef; /* Subtle background color for active link */
-  border-radius: 2px; /* Rounded corners for a softer look */
+.mensImages, .womenImages {
+  display: flex;
+  flex-direction: row;
+overflow-x: auto; 
+  scroll-behavior: smooth;
+  width: 100%;
+}
+.mensImages > div, .womenImages > div {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  margin-right: 10px; /* Optional, for spacing between items */
+}
+.gents-item {
+  flex: 0 0 auto; /* Prevent items from shrinking */
+  margin-right: 10px; /* Space between images */
+  /* Optional: adjust width based on image size */
+  width: calc(25% - 10px); /* Assuming 4 images per row with margins */
+}
+
+
+img {
+  max-width: 100%;
+  display: block; /* Ensure images don't exceed their container */
 }
