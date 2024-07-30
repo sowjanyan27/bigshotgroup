@@ -38,7 +38,8 @@ export default class Cartcount extends Component {
     }
 
     render() {
-        const { cart } = this.state;
+        const { cart } = this.props;
+        console.log(cart,"cartCount")
 
         return (
             <div>

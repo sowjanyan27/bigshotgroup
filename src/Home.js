@@ -70,6 +70,7 @@ class Home extends Component {
                 if(data != null){
                     console.log(data);
                     this.setState({ isLogin: true });
+                    localStorage.setItem('email',data[0].useremailid);
         
                     const { router } = this.props;
                     router.navigate('/Login');
