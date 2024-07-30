@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import withRouter from './helpers/Router';
- class Navbar extends Component {
-    handleCategoryChange = (category) => {
-        const { onCategoryChange } = this.props;
-        const {router}=this.props;
-        router.navigate(`/women/${category}`)
-        if (onCategoryChange) {
-            onCategoryChange(category);
-        }
-    }
-
-
+// import withRouter from './helpers/Router';
+import { withCart } from './CartContext';
+class Navbar extends Component {
+    // handleCategoryChange = (category) => {
+    //     const { onCategoryChange } = this.props;
+    //     const {router}=this.props;
+    //     router.navigate(`/women/${category}`)
+    //     if (onCategoryChange) {
+    //         onCategoryChange(category);
+    //     }
+    // }
     render() {
-        const { cartCount } = this.props;
+        const { cart } = this.props.cartContext;
+        const cartCount = cart.reduce((total, item) => total + item.count, 0);
         return (
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light  fixed-top">
                     <div className="container-fluid">
-                        <a className="navbar-brand"style={{color:"blue"}} href="#">Bigshot</a>
+                        <a className="navbar-brand" style={{ color: "blue", width: "130px" }} href="#">Bigshot</a>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
@@ -43,13 +43,15 @@ import withRouter from './helpers/Router';
                                     <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Women
                                     </a>
+
                                     <ul className="dropdown-menu">
-                                    <li><NavLink className="dropdown-item" to="/women/Kurta" onClick={() => this.handleCategoryChange('Kurta')}>Kurta</NavLink></li>
-                                        <li><NavLink className="dropdown-item" to="/women/Leggings" onClick={() => this.handleCategoryChange('Leggings')}>Leggings</NavLink></li>
-                                        <li><NavLink className="dropdown-item" to="/women/Dressmaterial" onClick={() => this.handleCategoryChange('DressMaterial')}>Dress Material</NavLink></li>
-                                        <li><NavLink className="dropdown-item" to="/women/Sarees" onClick={() => this.handleCategoryChange('Sarees')}>Sarees</NavLink></li>
-                                        <li><NavLink className="dropdown-item" to="/women/Lehengacholi" onClick={() => this.handleCategoryChange('Lehengacholi')}>Lehengacholi</NavLink></li>
-                                
+                                        <li><NavLink className="dropdown-item" to="/women/Kurta">Kurta</NavLink></li>
+                                        <li><NavLink className="dropdown-item" to="/women/Leggings">Leggings</NavLink></li>
+                                        <li><NavLink className="dropdown-item" to="/women/Dressmaterial">Dress Material</NavLink></li>
+                                        <li><NavLink className="dropdown-item" to="/women/Sarees">Sarees</NavLink></li>
+                                        <li><NavLink className="dropdown-item" to="/women/Lehengacholi">Lehengacholi</NavLink></li>
+
+                                      
                                     </ul>
                                 </li>
                                 <li className="nav-item">
@@ -58,7 +60,7 @@ import withRouter from './helpers/Router';
                             </ul>
                             <form className="d-flex">
                                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                                {/* <button className="btn btn-outline-success" type="submit">Search</button> */}
+
                             </form>
                             <ul className="navbar-nav ml-auto">
                                 <li className="nav-item">
@@ -80,4 +82,4 @@ import withRouter from './helpers/Router';
         );
     }
 }
-export default withRouter(Navbar)
+export default withCart(Navbar);

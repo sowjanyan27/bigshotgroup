@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import { Gents, Kurta } from './helpers/images'; // Ensure images have correct exports
-import Navbar from './Navbar';
+import { loginGents, loginWomens } from './helpers/images'; // Ensure images have correct exports
+import withRouter from './helpers/Router';
 
-export default class Login extends Component {
+
+class Login extends Component {
   constructor(props) {
     super(props);
-    this.mensImagesRef = React.createRef(); // Reference for mensImages container
+    this.gentsImagesRef = React.createRef(); // Reference for Gents images container
+    this.womensImagesRef = React.createRef(); // Reference for Womens images container
     this.state = {
       searchQuery: "",
+      
     };
   }
 
@@ -17,20 +20,29 @@ export default class Login extends Component {
     });
   };
 
-  handleClick = (title) => {
-    console.log(`Clicked on image with title: ${title}`);
+  handleClick = (item, flag) => {
+    console.log(`Clicked on image with title: ${item}, flag: ${flag}`);
+    if (flag === 2) {
+      const { router } = this.props;
+      router.navigate('/Women');
+    }
   };
 
-  scroll = (direction) => {
-    const container = this.mensImagesRef.current;
+  scroll = (direction, section) => {
+    const container = section === 'gents' ? this.gentsImagesRef.current : this.womensImagesRef.current;
     if (!container) {
       console.error('Collection container not found');
       return;
     }
 
-    const itemWidth = container.querySelector('.gents-item').clientWidth;
-    const scrollAmount = direction === 'prev' ? -itemWidth : itemWidth;
+    const item = container.querySelector('.gents-item') || container.querySelector('.kurta-item');
+    if (!item) {
+      console.error('Item not found');
+      return;
+    }
 
+    const itemWidth = item.clientWidth;
+    const scrollAmount = direction === 'prev' ? -itemWidth : itemWidth;
     container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
   };
 
@@ -38,23 +50,24 @@ export default class Login extends Component {
     return (
       <div className="login-container">
         <div className="main-content">
-          {/* <Navbar /> */}
-          <h2 style={{ textAlign: "center" }}>{Gents.title}</h2>
+        
+          
+          <h2 style={{ textAlign: "center" }}>{loginGents.title}</h2>
           <div className="collection-container">
             <img
               src='/Assest/images/prev.png'
               alt="prev"
               style={{ cursor: 'pointer', maxWidth: '100%' }}
-              onClick={() => this.scroll('prev')}
+              onClick={() => this.scroll('prev', 'gents')}
             />
 
-            <div className="mensImages" ref={this.mensImagesRef}>
-              {Gents.map((item) => (
+            <div className="mensImages" ref={this.gentsImagesRef}>
+              {loginGents.items.map((item) => (
                 <div key={item.id} className="gents-item">
                   <img
                     src={item.image}
                     alt={`Gent ${item.id}`}
-                    onClick={() => this.handleClick(item.title)}
+                    onClick={() => this.handleClick(item.id, 1)}
                   />
                 </div>
               ))}
@@ -64,25 +77,26 @@ export default class Login extends Component {
               src='/Assest/images/next.png'
               alt="next"
               style={{ cursor: 'pointer', maxWidth: '100%' }}
-              onClick={() => this.scroll('next')}
+              onClick={() => this.scroll('next', 'gents')}
             />
           </div>
-          <h2 style={{ textAlign: "center" }}>{Kurta.title}</h2>
+
+          <h2 style={{ textAlign: "center" }}>{loginWomens.title}</h2>
           <div className="collection-container">
             <img
               src='/Assest/images/prev.png'
               alt="prev"
               style={{ cursor: 'pointer', maxWidth: '100%' }}
-              onClick={() => this.scroll('prev')}
+              onClick={() => this.scroll('prev', 'womens')}
             />
 
-            <div className="womenImages" ref={this.mensImagesRef}>
-              {Kurta.items.map((item) => (
-                <div key={item.id} className="gents-item">
+            <div className="womenImages" ref={this.womensImagesRef}>
+              {loginWomens.items.map((item) => (
+                <div key={item.id} className="kurta-item">
                   <img
                     src={item.image}
-                    alt={`kurta ${item.id}`}
-                    onClick={() => this.handleClick(item.title)}
+                    alt={`Kurta ${item.id}`}
+                    onClick={() => this.handleClick(item.id, 2)}
                   />
                 </div>
               ))}
@@ -92,7 +106,7 @@ export default class Login extends Component {
               src='/Assest/images/next.png'
               alt="next"
               style={{ cursor: 'pointer', maxWidth: '100%' }}
-              onClick={() => this.scroll('next')}
+              onClick={() => this.scroll('next', 'womens')}
             />
           </div>
         </div>
@@ -100,3 +114,5 @@ export default class Login extends Component {
     );
   }
 }
+
+export default withRouter(Login);

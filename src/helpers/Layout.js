@@ -11,7 +11,7 @@ class Layout extends React.Component {
 
     return (
       <>
-        {!hideNavbarRoutes.includes(router.location.pathname) && <Navbar />}
+        {!hideNavbarRoutes.includes(router.location.pathname) && <Navbar cartCount={this.props.cartCount} />}
         {children}
       </>
     );
